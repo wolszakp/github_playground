@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pw.PlaygroundApi", "Pw.PlaygroundApi\Pw.PlaygroundApi.csproj", "{B6433F48-BD66-469C-B5B8-27AAA16150E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pw.PlaygroundApi.Test", "Pw.PlaugroundApi.Test\Pw.PlaygroundApi.Test.csproj", "{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6433F48-BD66-469C-B5B8-27AAA16150E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6433F48-BD66-469C-B5B8-27AAA16150E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6433F48-BD66-469C-B5B8-27AAA16150E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6433F48-BD66-469C-B5B8-27AAA16150E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5932D717-6F8E-4A19-BABD-1BBF04351C49}
+	EndGlobalSection
+EndGlobal
