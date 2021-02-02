@@ -22,6 +22,13 @@ jobs:
     - name: Test
       run: dotnet test  --verbosity normal --logger GitHubActions
       # run: dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+    - name: TestReporter
+      uses: zyborg/dotnet-tests-report@v1
+      with:
+        project_path: Pw.PlaygroundApi.Test/Pw.PlaygroundApi.Test.csproj
+        report_name: Pw.PlaygroundApi
+        report_title: PlaygroundApi tests
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish application
       run: dotnet publish -c Release ./Pw.PlaygroundApi/Pw.PlaygroundApi.csproj -o publish_output
     - uses: actions/upload-artifact@v2
