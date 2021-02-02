@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pw.PlaygroundApi", "Pw.PlaygroundApi\Pw.PlaygroundApi.csproj", "{B6433F48-BD66-469C-B5B8-27AAA16150E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pw.PlaygroundApi.Test", "Pw.PlaugroundApi.Test\Pw.PlaygroundApi.Test.csproj", "{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pw.PlaygroundApi.Test", "Pw.PlaygroundApi.Test\Pw.PlaygroundApi.Test.csproj", "{DEAFD1C7-1605-4A32-8F61-256481D8ACF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
