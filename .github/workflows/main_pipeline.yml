@@ -19,21 +19,9 @@ jobs:
       run: dotnet restore
     - name: Build application
       run: dotnet build --no-restore
-  test:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-    - name: Setup .NET version
-      uses: actions/setup-dotnet@v1
     - name: Test
       run: dotnet test  --verbosity normal --logger GitHubActions
       # run: dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
-  publish:
-    runs-on: ubuntu-latest
-    needs: [build, test]
-    steps:
-    - name: Setup .NET version
-      uses: actions/setup-dotnet@v1
     - name: Publish application
       run: dotnet publish -c Release ./Pw.PlaygroundApi/Pw.PlaygroundApi.csproj -o publish_output
     - uses: actions/upload-artifact@v2
