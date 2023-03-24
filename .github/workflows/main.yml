@@ -1,0 +1,46 @@
+name: Main-CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET version
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build application
+      run: dotnet build --no-restore
+    - name: Test
+      #run: dotnet test  --verbosity normal # --logger GitHubActions
+      run: dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./lcov.info
+      #run: dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov ./lcov.info
+    - name: TestReporter
+      uses: zyborg/dotnet-tests-report@v1
+      with:
+        project_path: Pw.PlaygroundApi.Test/Pw.PlaygroundApi.Test.csproj
+        report_name: Pw.PlaygroundApi.Tests
+        report_title: PlaygroundApi tests
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Report code coverage
+      uses: zgosalvez/github-actions-report-lcov@v1
+      with:
+        coverage-files: Pw.PlaygroundApi.Test/lcov*.info
+        minimum-coverage: 40
+        artifact-name: code-coverage-report
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: .
+    - name: Publish application
+      run: dotnet publish -c Release ./Pw.PlaygroundApi/Pw.PlaygroundApi.csproj -o publish_output
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Api
+        path: publish_output/
